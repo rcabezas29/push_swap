@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stacks.c                                      :+:      :+:    :+:   */
+/*   ops.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 14:00:13 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/18 12:35:13 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/03/18 12:59:16 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/03/18 13:10:11 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void    init_stack_a(t_push_swap *ps, char **argv)
+void	swap(int *stack)
 {
-    int i;
-	int j;
+	int aux;
+
+	aux = stack[0];
+	stack[0] = stack[1];
+	stack[1] = aux;
+}
+
+void	push(int *stack_1, int *stack_2)
+{
 	
-	i = 1;
-	j = 0;
-	while (argv[i] != '\0')
-	{
-		ps->a[j] = ft_atoi(argv[i]);
-		i++;
-		j++;
-	}
+}
+
+void	rotate(int *stack)
+{
+	
 }

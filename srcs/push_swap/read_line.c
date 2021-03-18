@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stacks.c                                      :+:      :+:    :+:   */
+/*   read_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 14:00:13 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/18 12:35:13 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/03/18 12:40:46 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/03/18 13:02:56 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void    init_stack_a(t_push_swap *ps, char **argv)
+void    read_line(t_push_swap *ps)
 {
-    int i;
-	int j;
-	
-	i = 1;
-	j = 0;
-	while (argv[i] != '\0')
-	{
-		ps->a[j] = ft_atoi(argv[i]);
-		i++;
-		j++;
-	}
+    if (ps->a[0] == "sa")
+        sa(ps->a);
 }
