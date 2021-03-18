@@ -6,52 +6,47 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/03/17 15:29:34 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/03/18 12:17:35 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PUSH_SWAP = push_swap
-
 CHECKER = checker
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = gcc -Werror -Wextra -Wall
 
-CH_FILES = checker.c
+SRCS_CH = checker.c
 
-SHARED_FILES = init_stacks.c
+CH_SRCS = $(addprefix srcs/checker/, $(SRCS_CH))
 
-PS_FILES = 
+OBJS_CH = $(CH_SRCS:.c=.o)
 
-SRCS_CH = $(addprefix srcs/checker/, $(CH_FILES))
+SRCS_SHARED = init_stacks.c
 
-SRCS_PS = $(addprefix srcs/push_swap/, $(PS_FILES))
+SHARED_SRCS = $(addprefix srcs/shared/, $(SRCS_SHARED))
 
-SRCS_SHARED = $(addprefix srcs/shared/, $(SHARED_FILES))
+OBJS_SHARED = $(SHARED_SRCS:.c=.o)
 
-OBJS_CH = $(SRCS_CH:.c=.o)
-
-OBJS_PS = $(SRCS_PS:.c=.o)
-
-OBJS_SHARED = $(SRCS_SHARED:.c=.o)
+INCLUDES = includes
 
 RM = rm -rf
 
-all: $(CHECKER)
+LIBFT = libft
 
-$(PUSH_SWAP) : $(OBJS_PS)
+$(CHECKER) : $(OBJS_CH) $(OBJS_SHARED)
 	@make -C $(LIBFT)
-	@$(CFLAGS) includes/push_swap.h libft/libft.a $(OBJS_PS) -o $(PUSH_SWAP)
+	@$(CFLAGS) -I$(INCLUDES) $(LIBFT)/libft.a $(OBJS_CH) $(OBJS_SHARED) -o $(CHECKER)
 
-$(CHECKER) : $(OBJS_CH)
-	@make -C $(LIBFT)
-	@$(CFLAGS) includes/push_swap.h libft/libft.a $(OBJS_CH) -o $(CHECKER)
+%.o: %.c
+	@$(CFLAGS) -I$(INCLUDES) -o $@ -c $<
 
-clean:
-	@$(RM) $(OBJS_CH) $(OBJS_PS) $(OBJS_SHARED)
-	@make clean -C libft
+all : $(CHECKER)
 
-fclean:			clean
-	@$(RM) $(PUSH_SWAP) $(CHECKER)
+clean :
+	@$(RM) $(OBJS_CH) $(OBJS_SHARED)
+	@make clean -C $(LIBFT)
+
+fclean : clean
+	@$(RM) $(CHECKER)
 	@make fclean -C $(LIBFT)
 
 re:				fclean all

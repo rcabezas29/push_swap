@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 19:10:45 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/11 12:49:46 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/18 11:38:39 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	get_next_line(int fd, char **line)
 	ret = 0;
 	buf = malloc(2);
 	*line = ft_strdup("");
-	if (line == '\0' || *line != "")
+	if (line == '\0' || *line != '\0')
 		return (-1);
 	while (read(fd, buf, 1) > 0)
 	{
