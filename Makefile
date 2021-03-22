@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/03/18 13:04:12 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/03/22 10:04:38 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ CHECKER = checker
 
 CFLAGS = gcc -Werror -Wextra -Wall
 
-SRCS_CH = checker.c read_line.c ops.c
+SRCS_CH = checker.c read_line.c
 
 CH_SRCS = $(addprefix srcs/checker/, $(SRCS_CH))
 
 OBJS_CH = $(CH_SRCS:.c=.o)
 
-SRCS_SHARED = init_stacks.c
+SRCS_SHARED = init_stacks.c ops.c
 
 SHARED_SRCS = $(addprefix srcs/shared/, $(SRCS_SHARED))
 

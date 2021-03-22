@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:40:46 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/18 13:02:56 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/22 10:11:47 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 void    read_line(t_push_swap *ps)
 {
     if (ps->a[0] == "sa")
-        sa(ps->a);
+        swap(ps->a);
+    if (ps->a[0] == "pa")
+        push(ps->a, ps->b, ps->argc - 1);
 }
