@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:16 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/22 12:27:33 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/23 11:54:01 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	reverse_rotate(int *stack)
 	i = 0;
 	while(stack[i] != '\0')
 		i++;
-	
 }
 
 void	align(int *stack, int nargs)

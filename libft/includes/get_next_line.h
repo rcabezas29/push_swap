@@ -6,12 +6,14 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 19:38:34 by rcabezas          #+#    #+#             */
-/*   Updated: 2020/12/16 17:41:46 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/23 11:49:43 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+# define BUFFER_SIZE 100
 
 # include <stdlib.h>
 # include <stdio.h>

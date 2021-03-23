@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stacks.c                                      :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 14:00:13 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/23 13:09:21 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/03/23 12:00:09 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/03/23 13:10:07 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int    *init_stack_a(t_push_swap *ps, int *a, char **argv)
+void    print_stack_a(t_push_swap *ps)
 {
-    int i;
-	int j;
-	
-	i = 1;
-	j = 0;
-	while (i <= ps->n)
+	int i;
+
+	i = 0;
+	while(i <= ps->n - 1)
 	{
-		a[j] = ft_atoi(argv[i]);
+		printf("%i\n", ps->a[i]);
 		i++;
-		j++;
-	}
-	return (a);
+	}	
 }
