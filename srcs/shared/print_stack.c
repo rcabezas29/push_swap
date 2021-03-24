@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:00:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/23 13:10:07 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/24 13:24:39 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void    print_stack_a(t_push_swap *ps)
 	i = 0;
 	while(i <= ps->n - 1)
 	{
-		printf("%i\n", ps->a[i]);
+		printf("%i %i\n", ps->a[i], ps->b[i]);
 		i++;
-	}	
+	}
+	printf("- -\na b\n");
 }

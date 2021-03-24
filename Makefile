@@ -6,13 +6,14 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/03/23 12:00:42 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/03/24 14:06:00 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CHECKER = checker
 
-CFLAGS = gcc -Werror -Wextra -Wall
+CC		= gcc
+CFLAGS = -Werror -Wextra -Wall
 
 SRCS_CH = checker.c read_line.c
 
@@ -34,10 +35,10 @@ LIBFT = libft
 
 $(CHECKER) : $(OBJS_CH) $(OBJS_SHARED)
 	@make -C $(LIBFT)
-	@$(CFLAGS) -I$(INCLUDES) $(LIBFT)/libft.a $(OBJS_CH) $(OBJS_SHARED) -o $(CHECKER)
+	@$(CC) $(CFLAGS) -I$(INCLUDES) $(LIBFT)/libft.a $(OBJS_CH) $(OBJS_SHARED) -o $(CHECKER)
 
 %.o: %.c
-	@$(CFLAGS) -I$(INCLUDES) -o $@ -c $<
+	@$(CC) $(CFLAGS) -I$(INCLUDES) -o $@ -c $<
 
 all : $(CHECKER)
 

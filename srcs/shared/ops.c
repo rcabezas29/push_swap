@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:16 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/23 11:54:01 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/24 16:40:44 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@ void	swap(int *stack)
 	stack[1] = aux;
 }
 
-void	push(int *stack_1, int *stack_2, int nargs)
+int	 *push(int *stack_1, int *stack_2, int nargs)
 {
 	int *aux;
 	int i;
 	int j;
 
-	if (stack_2[0] == '\0')
-		return ;
-	aux = malloc(nargs);
+	if (stack_2[0] == 0)
+		return (stack_1);
+	aux = ft_calloc(nargs, sizeof(int));
 	aux[0] = stack_2[0];
-	stack_2[0] = '\0';
+	stack_2[0] = 0;
 	i = 0;
 	j = 1;
 	while (j <= nargs)
 		aux[j++] = stack_1[i++];
-	stack_1 = aux;
 	align(stack_2, nargs);
+	return (aux);
 }
 
 void	rotate(int *stack, int nargs)
@@ -47,16 +47,16 @@ void	rotate(int *stack, int nargs)
 	aux = stack[0];
 	stack[0] = '\0';
 	align(stack, nargs);
-	stack[nargs] = aux;
+	stack[nargs - 1] = aux;
 }
 
-void	reverse_rotate(int *stack)
+void	reverse_rotate(int *stack, int nargs)
 {
 	int i;
 
 	i = 0;
-	while(stack[i] != '\0')
-		i++;
+	while(i++ < nargs - 1)
+		rotate(stack, nargs);
 }
 
 void	align(int *stack, int nargs)
@@ -64,12 +64,12 @@ void	align(int *stack, int nargs)
 	int i;
 
 	i = 0;
-	while (i <= nargs)
+	while (i < nargs - 1)
 	{
-		if (stack[i] == '\0')
+		if (stack[i] == 0)
 		{
 			stack[i] = stack[i + 1];
-			stack[i + 1] = '\0';
+			stack[i + 1] = 0;
 		}
 		i++;
 	}

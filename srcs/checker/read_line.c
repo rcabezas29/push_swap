@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:40:46 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/23 13:10:43 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/24 16:43:30 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,57 @@ void    read_line(t_push_swap *ps)
         swap(ps->a);
         print_stack_a(ps);
     }
+    if (ft_strcmp(ps->line[0], "sb") == 0)
+    {
+        swap(ps->b);
+        print_stack_a(ps);
+    }
+    if (ft_strcmp(ps->line[0], "ss") == 0)
+    {
+        swap(ps->a);
+        swap(ps->b);
+        print_stack_a(ps);
+    }
     if (ft_strcmp(ps->line[0], "pa") == 0)
     {
-        push(ps->a, ps->b, ps->n);
+        ps->a = push(ps->a, ps->b, ps->n);
         print_stack_a(ps);
     }
     if (ft_strcmp(ps->line[0], "pb") == 0)
     {
-        push(ps->b, ps->a, ps->n);
+        ps-> b = push(ps->b, ps->a, ps->n);
         print_stack_a(ps);
     }
     if (ft_strcmp(ps->line[0], "ra") == 0)
     {
         rotate(ps->a, ps->n);
+        print_stack_a(ps);
+    }
+    if (ft_strcmp(ps->line[0], "rb") == 0)
+    {
+        rotate(ps->b, ps->n);
+        print_stack_a(ps);
+    }
+     if (ft_strcmp(ps->line[0], "rr") == 0)
+    {
+        rotate(ps->a, ps->n);
+        rotate(ps->b, ps->n);
+        print_stack_a(ps);
+    }
+    if (ft_strcmp(ps->line[0], "rra") == 0)
+    {
+        reverse_rotate(ps->a, ps->n);
+        print_stack_a(ps);
+    }
+    if (ft_strcmp(ps->line[0], "rrb") == 0)
+    {
+        reverse_rotate(ps->b, ps->n);
+        print_stack_a(ps);
+    }
+    if (ft_strcmp(ps->line[0], "rrr") == 0)
+    {
+        reverse_rotate(ps->a, ps->n);
+        reverse_rotate(ps->b, ps->n);
         print_stack_a(ps);
     }
 }
