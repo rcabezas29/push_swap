@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/03/24 14:06:00 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/03/24 16:47:38 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CHECKER = checker
 CC		= gcc
 CFLAGS = -Werror -Wextra -Wall
 
-SRCS_CH = checker.c read_line.c
+SRCS_CH = checker.c read_line.c check_order.c
 
 CH_SRCS = $(addprefix srcs/checker/, $(SRCS_CH))
 

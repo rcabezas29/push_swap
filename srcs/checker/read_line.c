@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:40:46 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/24 16:43:30 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/24 17:21:44 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,6 @@ void    read_line(t_push_swap *ps)
         reverse_rotate(ps->b, ps->n);
         print_stack_a(ps);
     }
+    if (ft_strcmp(ps->line[0], "ch") == 0)
+        check_order(ps);
 }
