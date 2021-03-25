@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/24 16:47:28 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/25 10:16:31 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct s_push_swap
 {
     int	*a;
     int *b;
-    char **line;
+    char *line;
     int n;
 }               t_push_swap;
 
@@ -36,4 +36,6 @@ void	align(int *stack, int nargs);
 void    print_stack_a(t_push_swap *ps);
 
 void    check_order(t_push_swap *ps);
+
+void    check_args(int n, char **args);
 #endif
