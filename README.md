@@ -1,6 +1,6 @@
 # Push_swap
 
-# RESOURCES
+##RESOURCES
 
 DOUBLY CIRCULAR LINKED LIST - https://www.geeksforgeeks.org/doubly-circular-linked-list-set-1-introduction-and-insertion/
 
