@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:36:41 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 12:28:48 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:08:06 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 		printf("ERROR\nIncorrect number of arguments");
 		return (0);
 	}
-	ps->a = init_stack_a(ps, argv);
+	init_stack_a(ps, argv);
 	print_stack_a(ps);
 	while (get_next_line(1, &ps->line) > 0)
 	{

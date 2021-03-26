@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 12:46:01 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:07:53 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 typedef struct s_stack
 {
     int data;
-    t_stack *next;
-    t_stack *prev;
+    struct t_stack *next;
+    struct t_stack *prev;
 }               t_stack;
 
 
 typedef struct s_push_swap
 {
     t_stack *a;
-    int *b;
+    t_stack *b;
     int n;
     char *line;
 }               t_push_swap;
 
-t_stack *init_stack_a(t_push_swap *ps, char **argv);
+void    init_stack_a(t_push_swap *ps, char **argv);
 
 void    read_line(t_push_swap *ps);
 

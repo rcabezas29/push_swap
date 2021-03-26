@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:40:46 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/25 10:17:37 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 14:57:39 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,44 +32,44 @@ void    read_line(t_push_swap *ps)
     }
     if (ft_strcmp(ps->line, "pa") == 0)
     {
-        ps->a = push(ps->a, ps->b, ps->n);
+        push(ps->a, ps->b);
         print_stack_a(ps);
     }
     if (ft_strcmp(ps->line, "pb") == 0)
     {
-        ps-> b = push(ps->b, ps->a, ps->n);
+        push(ps->b, ps->a);
         print_stack_a(ps);
     }
     if (ft_strcmp(ps->line, "ra") == 0)
     {
-        rotate(ps->a, ps->n);
+        rotate(ps->a);
         print_stack_a(ps);
     }
     if (ft_strcmp(ps->line, "rb") == 0)
     {
-        rotate(ps->b, ps->n);
+        rotate(ps->b);
         print_stack_a(ps);
     }
      if (ft_strcmp(ps->line, "rr") == 0)
     {
-        rotate(ps->a, ps->n);
-        rotate(ps->b, ps->n);
+        rotate(ps->a);
+        rotate(ps->b);
         print_stack_a(ps);
     }
     if (ft_strcmp(ps->line, "rra") == 0)
     {
-        reverse_rotate(ps->a, ps->n);
+        reverse_rotate(ps->a);
         print_stack_a(ps);
     }
     if (ft_strcmp(ps->line, "rrb") == 0)
     {
-        reverse_rotate(ps->b, ps->n);
+        reverse_rotate(ps->b);
         print_stack_a(ps);
     }
     if (ft_strcmp(ps->line, "rrr") == 0)
     {
-        reverse_rotate(ps->a, ps->n);
-        reverse_rotate(ps->b, ps->n);
+        reverse_rotate(ps->a);
+        reverse_rotate(ps->b);
         print_stack_a(ps);
     }
 }

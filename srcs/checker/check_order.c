@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:46:30 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/25 11:00:29 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:33:39 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 void    check_order(t_push_swap *ps)
 {
     int i;
+    t_stack *ori;
+    t_stack *fol;
 
     i = 0;
     while (i < ps->n - 1)
     {
-        if (ps->a[i] > ps->a[i + 1] || ps->b[0] != 0)
+        fol = ori->next;
+        if (ori->data > fol->data || ps->b != NULL)
         {
             printf("KO");
             return ;
         }
+        ori = ori->next;
         i++;
     }
     printf("OK!");

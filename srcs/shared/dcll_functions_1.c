@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 09:51:03 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 12:17:29 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:34:27 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_dcll_size(t_stack *s)
 	int i;
 	t_stack *p;
 
+	i = 0;
 	p = s->next;
 	while (p != s)
 	{
