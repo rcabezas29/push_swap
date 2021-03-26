@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:00:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 15:35:49 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 16:11:45 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 void    print_stack_a(t_push_swap *ps)
 {
 	t_stack *stack_a;
-	t_stack *stack_b;
 
 	stack_a = ps->a;
-	stack_b = ps->b;
-	while(ps->a || ps->b)
+	while(stack_a->next != (struct t_stack *)ps->a)
 	{
-		printf("%i %i\n", stack_a->data, stack_b->data);
-		ps->a = stack_a->next;
+		printf("%i\n", stack_a->data);
+		stack_a = (t_stack *)stack_a->next;
 	}
 	printf("- -\na b\n");
 }

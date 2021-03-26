@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 15:07:53 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:51:44 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void	ft_dcll_delback(t_stack *s);
 void	ft_dcll_delfirst(t_stack *s);
 void	ft_dcll_clear(t_stack *s);
 t_stack *ft_create_node(int n);
-t_stack *ft_dcll_delone(t_stack *s);
+void    ft_dcll_delone(t_stack *s);
 #endif

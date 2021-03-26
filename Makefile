@@ -6,14 +6,14 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/03/26 12:22:37 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/03/26 15:55:07 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CHECKER = checker
 
 CC		= gcc
-CFLAGS = -Werror -Wextra -Wall
+CFLAGS = -Werror -Wextra -Wall -g
 
 SRCS_CH = checker.c read_line.c check_order.c
 

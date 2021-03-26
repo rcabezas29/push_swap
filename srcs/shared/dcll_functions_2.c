@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 12:15:33 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 15:35:17 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:51:24 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_dcll_delback(t_stack *s)
 
 	p = ft_dcll_last(s);
 	free(p);
-	p->next = s;
+	p->next = (struct t_stack *)s;
 	s->prev = p->prev;
 }
 
@@ -28,21 +28,21 @@ void	ft_dcll_delfirst(t_stack *s)
 
 	p = ft_dcll_last(s);
 	free(s);
-	s = s->next;
-	p->next = s;
-	s->prev = p;
+	s = (t_stack *)s->next;
+	p->next = (struct t_stack *)s;
+	s->prev = (struct t_stack *)p;
 }
 
 void	ft_dcll_clear(t_stack *s)
 {
 	t_stack *p;
 
-	p = s->next;
+	p = (t_stack *)s->next;
 	while (p != s)
 	{
 		free(p);
-		p = p->next;
-		p->prev = ft_dcll_last(s);
+		p = (t_stack *)p->next;
+		p->prev = (struct t_stack *)ft_dcll_last(s);
 	}
 	free(s);
 }
@@ -53,10 +53,10 @@ t_stack *ft_create_node(int n)
 
     s = (t_stack *)malloc(sizeof(t_stack));
     s->data = n;
-    return (n);
+    return (s);
 }
 
-t_stack *ft_dcll_delone(t_stack *s)
+void	ft_dcll_delone(t_stack *s)
 {
 	t_stack *p;
 

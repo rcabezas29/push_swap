@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:16 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 15:35:43 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:42:15 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap(t_stack *stack)
 {
 	t_stack *aux;
 
-    aux = stack->next;
+    aux = (t_stack *)stack->next;
     ft_dcll_delone(aux);
     ft_dcll_addfront(stack, ft_create_node(aux->data));
 }
@@ -42,7 +42,7 @@ void	reverse_rotate(t_stack *stack)
 {
 	t_stack *aux;
 
-    aux = stack->prev;
+    aux = (t_stack *)stack->prev;
     ft_dcll_delback(stack);
     ft_dcll_addfront(stack, aux);
 }
