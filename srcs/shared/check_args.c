@@ -6,14 +6,41 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:58:53 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/25 10:06:46 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 08:35:58 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-/*
-void    check_args(int n, char **args)
+void    check_args(char **args)
 {
-    
-}*/
+    int i;
+    int j;
+    int k;
+
+    i = 1;
+    while (args)
+    {
+        j = 0;
+        while (args[i][j])
+        {
+            if (!ft_isdigit(args[i][j]))
+            {
+                printf("ERRROR\n");
+                exit (EXIT_SUCCESS);
+            }
+            j++;
+        }
+        k = i + 1;
+        while (args[k])
+        {
+            if (!ft_strcmp(args[i], args[k]))
+            {
+                printf("ERRROR\n");
+                exit (EXIT_SUCCESS);
+            }
+            k++;
+        }
+        i++;
+    }
+}

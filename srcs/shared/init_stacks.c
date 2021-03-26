@@ -6,24 +6,22 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:00:13 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/24 13:12:10 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 12:27:47 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int    *init_stack_a(t_push_swap *ps, int *a, char **argv)
+t_stack    *init_stack_a(t_push_swap *ps, char **argv)
 {
-    int i;
-	int j;
-	
+	int i;
+
 	i = 1;
-	j = 0;
-	while (i <= ps->n)
+	while (argv[i])
 	{
-		a[j] = ft_atoi(argv[i]);
+		if (!ps->a)
+			ps->a = ft_dcllnew(ft_atoi(argv[i]));
+		ft_dcll_addback(ps->a, ft_create_node(argv[i]));
 		i++;
-		j++;
 	}
-	return (a);
 }

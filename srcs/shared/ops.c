@@ -6,71 +6,43 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:16 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/24 16:40:44 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/26 13:06:43 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	swap(int *stack)
+void	swap(t_stack *stack)
 {
 	int aux;
 
-	aux = stack[0];
-	stack[0] = stack[1];
-	stack[1] = aux;
+    aux = stack->next->data;
+    ft_dcll_delone(stack->next);
+    ft_dcll_addfront(stack, ft_create_node(aux));
 }
 
-int	 *push(int *stack_1, int *stack_2, int nargs)
+void	push(t_stack *stack_1, t_stack *stack_2)
 {
-	int *aux;
-	int i;
-	int j;
-
-	if (stack_2[0] == 0)
-		return (stack_1);
-	aux = ft_calloc(nargs, sizeof(int));
-	aux[0] = stack_2[0];
-	stack_2[0] = 0;
-	i = 0;
-	j = 1;
-	while (j <= nargs)
-		aux[j++] = stack_1[i++];
-	align(stack_2, nargs);
-	return (aux);
+	if (stack_2 == NULL)
+        return ;
+    ft_dcll_addfront(stack_1, stack_2);
+    ft_dcll_delfirst(stack_2);
 }
 
-void	rotate(int *stack, int nargs)
+void	rotate(t_stack *stack)
 {
-	int aux;
-
-	aux = stack[0];
-	stack[0] = '\0';
-	align(stack, nargs);
-	stack[nargs - 1] = aux;
+	t_stack *aux;
+    
+    aux = ft_create_node(stack->data);
+    ft_dcll_delfirst(stack);
+    ft_dcll_addback(stack, aux);
 }
 
-void	reverse_rotate(int *stack, int nargs)
+void	reverse_rotate(t_stack *stack)
 {
-	int i;
+	t_stack *aux;
 
-	i = 0;
-	while(i++ < nargs - 1)
-		rotate(stack, nargs);
-}
-
-void	align(int *stack, int nargs)
-{
-	int i;
-
-	i = 0;
-	while (i < nargs - 1)
-	{
-		if (stack[i] == 0)
-		{
-			stack[i] = stack[i + 1];
-			stack[i + 1] = 0;
-		}
-		i++;
-	}
+    aux = ft_create_node(stack->prev->data);
+    ft_dcll_delback(stack);
+    ft_dcll_addfront(stack, aux);
 }
