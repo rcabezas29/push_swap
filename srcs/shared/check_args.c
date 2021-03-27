@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:58:53 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 16:02:25 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/27 11:02:49 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void    check_args(char **args)
         {
             if (!ft_isdigit(args[i][j]))
             {
-                printf("ERRROR\n");
+                printf("ERROR\n");
                 exit (EXIT_SUCCESS);
             }
             j++;
@@ -36,7 +36,7 @@ void    check_args(char **args)
         {
             if (!ft_strcmp(args[i], args[k]))
             {
-                printf("ERRROR\n");
+                printf("ERROR\n");
                 exit (EXIT_SUCCESS);
             }
             k++;

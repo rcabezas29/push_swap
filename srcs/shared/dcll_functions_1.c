@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 09:51:03 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/27 09:03:17 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/27 11:51:48 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ t_stack *ft_dcllnew(int n)
 {
     t_stack *s;
 
-    s = (t_stack *)malloc(sizeof(t_stack));
+    s = malloc(sizeof(t_stack *));
     s->data = n;
-    s->next = (struct t_stack *)s;
-    s->prev = (struct t_stack *)s;
+    s->next = s;
+    s->prev = s;
     return (s);
 }
 
 void	ft_dcll_addfront(t_stack *s, t_stack *new)
 {
-    new->next = (struct t_stack *)s;
+    new->next = s;
 	new->prev = s->prev;
 	s = new;
 }
@@ -54,9 +54,11 @@ void	ft_dcll_addback(t_stack *s, t_stack *new)
 {
 	t_stack *last;
 
-	last = (t_stack *)s->prev;
-	s->prev = (struct t_stack *)new;
-	new->next = (struct t_stack *)s;
-	last->next = (struct t_stack *)new;
-	new->prev = (struct t_stack *)last;
+	last = malloc(sizeof(t_stack));
+	last = s->prev;
+	s->prev = new;
+	new->next = s;
+	new->prev = last;
+	last->next = new;
+	printf("Metiendo new\n");
 }

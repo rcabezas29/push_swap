@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 15:51:44 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/27 11:25:47 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 typedef struct s_stack
 {
     int data;
-    struct t_stack *next;
-    struct t_stack *prev;
+    struct s_stack *next;
+    struct s_stack *prev;
 }               t_stack;
 
 

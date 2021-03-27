@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:36:41 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 15:54:24 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/27 11:11:00 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	init_stack_a(ps, argv);
-	print_stack_a(ps);
+	//print_stack_a(ps);
 	while (get_next_line(1, &ps->line) > 0)
 	{
 		if (!ft_strcmp(ps->line, ""))
