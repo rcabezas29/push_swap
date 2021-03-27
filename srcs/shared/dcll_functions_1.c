@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 09:51:03 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/26 16:36:00 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/27 09:03:17 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,5 @@ void	ft_dcll_addback(t_stack *s, t_stack *new)
 	s->prev = (struct t_stack *)new;
 	new->next = (struct t_stack *)s;
 	last->next = (struct t_stack *)new;
+	new->prev = (struct t_stack *)last;
 }
