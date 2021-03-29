@@ -6,6 +6,8 @@ DOUBLY CIRCULAR LINKED LIST - https://www.geeksforgeeks.org/doubly-circular-link
 
 https://www.javatpoint.com/circular-doubly-linked-list
 
-QUICK SORT ALGORITHM - https://en.wikipedia.org/wiki/Quicksort
+SORT ALGORITHM - https://en.wikipedia.org/wiki/Quicksort
 
 https://www.geeksforgeeks.org/quick-sort/
+
+https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
