@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/29 18:24:45 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/03/29 17:28:38 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/03/29 18:08:24 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int	main(int argc, char **argv)
+void    bubble_sort(t_push_swap *ps)
 {
-	t_push_swap *ps;
+    t_stack *sec;
 
-	check_args(argv);
-	ps = malloc(sizeof(t_push_swap));
-	ft_bzero(ps, sizeof(t_push_swap));
-	ps->n = argc - 1;
-	if (argc <= 1)
+    while (!check_order(ps))
     {
-		printf("ERROR\nIncorrect number of arguments");
-		return (0);
-	}
-	init_stack_a(ps, argv);
-	bubble_sort(ps);
-	printf("MEDIA: %i\n", get_media(ps));
-	print_stack_a(ps);
+        sec = ps->a->next;
+        if (ps->a > sec)
+        {
+            swap(ps->a);
+            ps->a = ps->a->prev;
+        }
+        ps->a = ps->a->next;
+    }
 }

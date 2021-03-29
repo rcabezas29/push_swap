@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   media.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/29 18:24:45 by rcabezas         ###   ########.fr       */
+/*   Created: 2021/03/29 18:13:03 by rcabezas          #+#    #+#             */
+/*   Updated: 2021/03/29 18:20:03 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int	main(int argc, char **argv)
+int get_media(t_push_swap *ps)
 {
-	t_push_swap *ps;
+	t_stack *aux;
+	int x;
 
-	check_args(argv);
-	ps = malloc(sizeof(t_push_swap));
-	ft_bzero(ps, sizeof(t_push_swap));
-	ps->n = argc - 1;
-	if (argc <= 1)
+	x = 0;
+	aux = ps->a;
+    while (aux->next != ps->a)
     {
-		printf("ERROR\nIncorrect number of arguments");
-		return (0);
-	}
-	init_stack_a(ps, argv);
-	bubble_sort(ps);
-	printf("MEDIA: %i\n", get_media(ps));
-	print_stack_a(ps);
+		x += aux->data;
+		aux = aux->next;
+    }
+	x += aux->data;
+	x /= ps->n;
+	return (x);
 }
