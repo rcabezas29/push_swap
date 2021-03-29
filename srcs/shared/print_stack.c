@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:00:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/29 15:23:41 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:53:26 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void    print_stack_a(t_push_swap *ps)
 {
 	t_stack *stack_a;
 
+	if (!ps->a)
+	{
+		print_stack_b(ps);
+		return ;
+	}
 	stack_a = ps->a;
 	while(stack_a->next != ps->a)
 	{
