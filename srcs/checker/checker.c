@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:36:41 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/27 11:11:00 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/29 15:24:00 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 
 	check_args(argv);
 	ps = malloc(sizeof(t_push_swap));
+	ft_bzero(ps, sizeof(t_push_swap));
 	ps->n = argc - 1;
 	if (argc <= 1)
     {
@@ -25,7 +26,8 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	init_stack_a(ps, argv);
-	//print_stack_a(ps);
+	if (ps->a)
+		print_stack_a(ps);
 	while (get_next_line(1, &ps->line) > 0)
 	{
 		if (!ft_strcmp(ps->line, ""))
