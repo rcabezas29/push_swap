@@ -9,3 +9,5 @@ https://www.javatpoint.com/circular-doubly-linked-list
 QUICK SORT ALGORITHM - https://en.wikipedia.org/wiki/Quicksort
 
 https://www.geeksforgeeks.org/quick-sort/
+
+https://www.javatpoint.com/circular-doubly-linked-list
