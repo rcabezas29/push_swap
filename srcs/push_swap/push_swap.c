@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/29 18:24:45 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/30 09:07:20 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	init_stack_a(ps, argv);
-	bubble_sort(ps);
-	printf("MEDIA: %i\n", get_media(ps));
+	if (ps->n <= 3)
+		bubble_sort(ps);
+	else if (3 < ps->n && ps->n <= 5)
+	{
+		printf("HOLA");	
+	}
+	//printf("MEDIA: %i\n", get_media(ps));
 	print_stack_a(ps);
 }
