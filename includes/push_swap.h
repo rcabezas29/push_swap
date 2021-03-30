@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/29 18:16:06 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/30 11:15:47 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	ft_dcll_clear(t_stack *s);
 t_stack *ft_create_node(int n);
 void    ft_dcll_delone(t_stack *node);
 
-void    bubble_sort(t_push_swap *ps);
+void    three_sort(t_push_swap *ps);
+int     check_order_three(t_push_swap *ps);
+
 int     get_media(t_push_swap *ps);
 #endif
