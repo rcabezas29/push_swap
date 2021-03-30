@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/30 17:15:18 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/30 17:43:48 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int     check_order_three(t_push_swap *ps)
 
     i = 0;
     ori = ps->a;
-    while (i < ps->n - 1)
+    while (i < 2)
     {
         fol = ori->next;
         if (ori->data > fol->data)
