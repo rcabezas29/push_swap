@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/30 17:24:41 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/30 18:25:45 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	main(int argc, char **argv)
 		three_sort(ps);
 	else if (3 < ps->n && ps->n <= 5)
 		five_sort(ps);
+	print_stack_a(ps);
 	return (0);
 }
