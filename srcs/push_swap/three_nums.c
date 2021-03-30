@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bubble_sort.c                                      :+:      :+:    :+:   */
+/*   three_nums.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/30 11:26:51 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/30 13:54:33 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ int     check_order_three(t_push_swap *ps)
 
     i = 0;
     ori = ps->a;
-    while (i < 3 - 1)
+    while (i < ps->n - 1)
     {
         fol = ori->next;
-        if (ori->data > fol->data || ps->b != NULL)
+        if (ori->data > fol->data)
             return (0);
         ori = ori->next;
         i++;
