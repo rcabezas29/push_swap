@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/30 13:54:33 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/30 17:15:18 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,45 @@
 
 void    three_sort(t_push_swap *ps)
 {
-    while (!check_order_three(ps))
+    if (!check_order_three(ps))
     {
-        if (ps->a->data < ps->a->next->data && ps->a->data > ps->a->prev->data)
+        if (ps->a->data > ps->a->next->data)
         {
-            ft_putstr_fd("rra\n", 0);
-            ps->a = ps->a->prev;
-        }
-        else if (ps->a->data > ps->a->next->data && ps->a->prev->data < ps->a->data)
-        {
-            ft_putstr_fd("ra\n", 0);
-            ps->a = ps->a->next;
+            if (ps->a->next->data > ps->a->prev->data)
+            {
+                ft_putstr_fd("sa\n", 0);
+                swap(ps->a);
+                ps->a = ps->a->prev;
+                ft_putstr_fd("rra\n", 0);
+                ps->a = ps->a->prev;
+            }
+            else
+            {
+                if (ps->a->prev->data > ps->a->data)
+                {
+                    ft_putstr_fd("sa\n", 0);
+                    swap(ps->a);
+                    ps->a = ps->a->prev;
+                }
+                else
+                {
+                    ft_putstr_fd("ra\n", 0);
+                ps->a = ps->a->next;
+                }
+            }
         }
         else
         {
-            ft_putstr_fd("sa\n", 0);
-            swap(ps->a);
-            ps->a = ps->a->prev;
-            if (check_order_three(ps) == 1)
-                return ;
-            if (ps->a->data < ps->a->next->data)
+            if(ps->a->data > ps->a->prev->data)
             {
                 ft_putstr_fd("rra\n", 0);
                 ps->a = ps->a->prev;
             }
             else
             {
+                ft_putstr_fd("sa\n", 0);
+                swap(ps->a);
+                ps->a = ps->a->prev;
                 ft_putstr_fd("ra\n", 0);
                 ps->a = ps->a->next;
             }
