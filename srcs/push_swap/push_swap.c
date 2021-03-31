@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/31 16:17:10 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/31 17:57:17 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,14 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	init_stack_a(ps, argv);
-	ps->max = check_maximum(ps);
-	ps->min = check_minimum(ps);
+	ps->max = check_maximum(ps->a);
+	ps->min = check_minimum(ps->a);
 	if (ps->n <= 3)
 		three_sort(ps);
 	else if (3 < ps->n && ps->n <= 5)
 		five_sort(ps);
+	else if (5 < ps->n && ps->n <= 100)
+		sort_hundred(ps);
+	print_stack_a(ps);
 	return (0);
 }

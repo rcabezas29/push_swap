@@ -6,20 +6,20 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 09:00:55 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/31 09:26:16 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/31 17:56:49 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int	check_maximum(t_push_swap *ps)
+int	check_maximum(t_stack *s)
 {
 	int max;
     t_stack *aux;
 
     max = 0;
-    aux = ps->a->next;
-    while (aux != ps->a)
+    aux = s->next;
+    while (aux != s)
     {
         if (aux->data > max)
             max = aux->data;
@@ -30,14 +30,14 @@ int	check_maximum(t_push_swap *ps)
     return (max);
 }
 
-int	check_minimum(t_push_swap *ps)
+int	check_minimum(t_stack *s)
 {
 	int min;
     t_stack *aux;
 
     min = INT32_MAX;
-    aux = ps->a->next;
-    while (aux != ps->a)
+    aux = s->next;
+    while (aux != s)
     {
         if (aux->data < min)
             min = aux->data;

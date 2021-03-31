@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/03/31 09:02:34 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/03/31 16:56:56 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS = -Werror -Wextra -Wall -g3 -fsanitize=address
 SRCS_CH = checker.c read_line.c
 
 SRCS_PS = three_nums.c push_swap.c media.c five_nums.c \
-			check_max_min.c
+			check_max_min.c hundred_nums.c
 
 CH_SRCS = $(addprefix srcs/checker/, $(SRCS_CH))
 
