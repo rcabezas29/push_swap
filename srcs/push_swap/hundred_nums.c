@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/31 18:25:31 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/31 18:39:50 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void    sort_hundred(t_push_swap *ps)
     }
     while (ps->b)
         order_b(ps);
-    print_stack_a(ps);
 }
 
 void    order_b(t_push_swap *ps)
