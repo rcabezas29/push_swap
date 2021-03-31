@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/30 18:16:59 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/31 09:21:07 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_push_swap
     t_stack *b;
     int n;
     char *line;
+    int max;
+    int min;
 }               t_push_swap;
 
 void    init_stack_a(t_push_swap *ps, char **argv);
@@ -65,4 +67,7 @@ int     check_order_five(t_push_swap *ps);
 void    insertion(t_push_swap *ps);
 
 int     get_media(t_push_swap *ps);
+
+int	check_maximum(t_push_swap *ps);
+int	check_minimum(t_push_swap *ps);
 #endif

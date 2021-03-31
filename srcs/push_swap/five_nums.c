@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:09:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/30 18:40:47 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/03/31 16:16:48 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,25 +51,27 @@ void    insertion(t_push_swap *ps)
 {
     while (!check_order_five(ps))
     {
-        if (ps->b && ps->a->data > ps->b->data)
+        push_a(ps);
+        ft_putstr_fd("pa\n", 0);
+        if (ps->a->data > ps->a->prev->data)
         {
-            ft_putstr_fd("pa\n", 0);
-            push_a(ps);
-            print_stack_a(ps);
+            ps->a = ps->a->next;
+            ft_putstr_fd("ra\n", 0);
         }
-        else if (ps->b && ps->b->data > ps->a->prev->data)
+        else if (ps->a->data > ps->a->next->data && ps->a->data < ps->a->prev->data)
         {
-            ft_putstr_fd("pa\n", 0);
-            push_a(ps);
+            while (ps->a->data < ps->a->prev->data)
+            {
+                ft_putstr_fd("rra\n", 0);
+                ps->a = ps->a->prev;
+                ft_putstr_fd("sa\n", 0);
+                swap(ps->a);
+                ps->a = ps->a->prev;
+            }
             ft_putstr_fd("ra\n", 0);
             ps->a = ps->a->next;
-        }
-        
-        else
-        {
             ft_putstr_fd("ra\n", 0);
             ps->a = ps->a->next;
-            print_stack_a(ps);
         }
     }
 }
