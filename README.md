@@ -11,3 +11,5 @@ SORT ALGORITHM - https://en.wikipedia.org/wiki/Quicksort
 https://www.geeksforgeeks.org/quick-sort/
 
 https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
+
+ruby -e "puts (1..20).to_a.shuffle.join(' ')"
