@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 15:43:00 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 17:22:34 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int		get_media(t_push_swap *ps);
 
 int		check_maximum(t_stack *s);
 int		check_minimum(t_stack *s);
+int		minimum_inpush(t_push_swap *ps, int media);
 
 void	sort_hundred(t_push_swap *ps);
 void	order_b(t_push_swap *ps);

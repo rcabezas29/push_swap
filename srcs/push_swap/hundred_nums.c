@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 16:40:02 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 17:27:29 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sort_hundred(t_push_swap *ps)
 	i = 0;
 	while (i <= ps->n - 1)
 	{
-		if (ps->a->data < get_media(ps))
+		if (ps->a->data <= get_media(ps))
 		{
 			push_b(ps);
 			ft_putstr_fd("pb\n", 1);
@@ -38,10 +38,9 @@ void	sort_hundred(t_push_swap *ps)
 	i = 0;
 	while (i <= ps->n - 1)
 	{
-		if (ps->a->data > get_media(ps))
+		if (ps->a->data > get_media(ps) && ps->a->data
+			!= minimum_inpush(ps, get_media(ps)))
 		{
-			/*if (ps->a->data == check_minimum(ps->a)){
-			}*/
 			push_b(ps);
 			ft_putstr_fd("pb\n", 1);
 			ps->x++;
