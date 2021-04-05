@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 12:15:33 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/29 15:32:34 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 16:56:31 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_dcll_delback(t_stack *s)
 {
-	t_stack *p;
+	t_stack	*p;
 
 	p = ft_dcll_last(s);
 	free(p);
@@ -24,7 +24,7 @@ void	ft_dcll_delback(t_stack *s)
 
 void	ft_dcll_clear(t_stack *s)
 {
-	t_stack *p;
+	t_stack	*p;
 
 	p = (t_stack *)s->next;
 	while (p != s)
@@ -36,19 +36,19 @@ void	ft_dcll_clear(t_stack *s)
 	free(s);
 }
 
-t_stack *ft_create_node(int n)
+t_stack	*ft_create_node(int n)
 {
-    t_stack *s;
+	t_stack	*s;
 
-    s = malloc(sizeof(t_stack));
-    s->data = n;
-    return (s);
+	s = malloc(sizeof(t_stack));
+	s->data = n;
+	return (s);
 }
 
 void	ft_dcll_delone(t_stack *s)
 {
-	t_stack *behind;
-	t_stack *infront;
+	t_stack	*behind;
+	t_stack	*infront;
 
 	behind = s->prev;
 	infront = s->next;

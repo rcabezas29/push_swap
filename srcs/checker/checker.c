@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:36:41 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 14:45:54 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 16:24:34 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	ft_bzero(ps, sizeof(t_push_swap));
 	ps->n = argc - 1;
 	if (argc <= 1)
-    {
+	{
 		printf("ERROR\nIncorrect number of arguments");
 		return (0);
 	}

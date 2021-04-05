@@ -6,13 +6,13 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 19:10:45 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/23 11:49:03 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 15:46:44 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static void		strdel(char **str)
+static void	strdel(char **str)
 {
 	if (str != NULL && *str != NULL)
 	{
@@ -21,7 +21,7 @@ static void		strdel(char **str)
 	}
 }
 
-static int		readline(char **a, char **line, int fd)
+static int	readline(char **a, char **line, int fd)
 {
 	int		len;
 	char	*aux;
@@ -36,7 +36,7 @@ static int		readline(char **a, char **line, int fd)
 	return (1);
 }
 
-static int		output(char **a, char **line, int ret, int fd)
+static int	output(char **a, char **line, int ret, int fd)
 {
 	if (ret < 0)
 		return (-1);
@@ -56,15 +56,15 @@ static int		output(char **a, char **line, int ret, int fd)
 	}
 }
 
-int				get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	char		*tmp;
 	static char	*a[4096];
 	int			ret;
 	char		*buff;
 
-	if (fd < 0 || line == NULL || BUFFER_SIZE < 1 ||
-		(!(buff = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1))))
+	buff = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+	if (fd < 0 || line == NULL || BUFFER_SIZE < 1 || !buff)
 		return (-1);
 	while ((ret = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
