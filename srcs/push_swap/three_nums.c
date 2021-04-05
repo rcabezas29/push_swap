@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/30 17:43:48 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 14:54:50 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@ void    three_sort(t_push_swap *ps)
         {
             if (ps->a->next->data > ps->a->prev->data)
             {
-                ft_putstr_fd("sa\n", 0);
+                ft_putstr_fd("sa\n", 1);
                 swap(ps->a);
                 ps->a = ps->a->prev;
-                ft_putstr_fd("rra\n", 0);
+                ft_putstr_fd("rra\n", 1);
                 ps->a = ps->a->prev;
             }
             else
             {
                 if (ps->a->prev->data > ps->a->data)
                 {
-                    ft_putstr_fd("sa\n", 0);
+                    ft_putstr_fd("sa\n", 1);
                     swap(ps->a);
                     ps->a = ps->a->prev;
                 }
                 else
                 {
-                    ft_putstr_fd("ra\n", 0);
+                    ft_putstr_fd("ra\n", 1);
                 ps->a = ps->a->next;
                 }
             }
@@ -45,15 +45,15 @@ void    three_sort(t_push_swap *ps)
         {
             if(ps->a->data > ps->a->prev->data)
             {
-                ft_putstr_fd("rra\n", 0);
+                ft_putstr_fd("rra\n", 1);
                 ps->a = ps->a->prev;
             }
             else
             {
-                ft_putstr_fd("sa\n", 0);
+                ft_putstr_fd("sa\n", 1);
                 swap(ps->a);
                 ps->a = ps->a->prev;
-                ft_putstr_fd("ra\n", 0);
+                ft_putstr_fd("ra\n", 1);
                 ps->a = ps->a->next;
             }
         }

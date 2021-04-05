@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/31 18:08:59 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/01 09:59:16 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_push_swap
     char *line;
     int max;
     int min;
+    int x;
 }               t_push_swap;
 
 void    init_stack_a(t_push_swap *ps, char **argv);

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:09:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/31 16:16:48 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 15:03:31 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,25 +52,25 @@ void    insertion(t_push_swap *ps)
     while (!check_order_five(ps))
     {
         push_a(ps);
-        ft_putstr_fd("pa\n", 0);
+        ft_putstr_fd("pa\n", 1);
         if (ps->a->data > ps->a->prev->data)
         {
             ps->a = ps->a->next;
-            ft_putstr_fd("ra\n", 0);
+            ft_putstr_fd("ra\n", 1);
         }
         else if (ps->a->data > ps->a->next->data && ps->a->data < ps->a->prev->data)
         {
             while (ps->a->data < ps->a->prev->data)
             {
-                ft_putstr_fd("rra\n", 0);
+                ft_putstr_fd("rra\n", 1);
                 ps->a = ps->a->prev;
-                ft_putstr_fd("sa\n", 0);
+                ft_putstr_fd("sa\n", 1);
                 swap(ps->a);
                 ps->a = ps->a->prev;
             }
-            ft_putstr_fd("ra\n", 0);
+            ft_putstr_fd("ra\n", 1);
             ps->a = ps->a->next;
-            ft_putstr_fd("ra\n", 0);
+            ft_putstr_fd("ra\n", 1);
             ps->a = ps->a->next;
         }
     }

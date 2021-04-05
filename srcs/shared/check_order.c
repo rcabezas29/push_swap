@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:46:30 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/30 09:26:37 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 14:46:12 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int    check_order(t_push_swap *ps)
         if (ori->data > fol->data || ps->b != NULL)
         {
             printf("KO");
-            print_stack_a(ps);
+            //print_stack_a(ps);
             return (0);
         }
         ori = (t_stack *)ori->next;
         i++;
     }
     printf("OK!");
-    print_stack_a(ps);
+    //print_stack_a(ps);
     exit(EXIT_SUCCESS);
 }

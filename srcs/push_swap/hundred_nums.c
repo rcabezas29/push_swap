@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/31 18:39:50 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/05 15:04:22 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ void    sort_hundred(t_push_swap *ps)
         if (ps->a->data < get_media(ps))
         {
             push_b(ps);
-            ft_putstr_fd("pb\n", 0);
+            ft_putstr_fd("pb\n", 1);
+            ps->x++;
         }
         else
         {
-            ft_putstr_fd("ra\n", 0);
+            ft_putstr_fd("ra\n", 1);
             ps->a = ps->a->next;
+            ps->x++;
         }
         i++;
     }
@@ -38,13 +40,19 @@ void    sort_hundred(t_push_swap *ps)
     {
         if (ps->a->data > get_media(ps))
         {
+            /*if (ps->a->data == check_minimum(ps->a))
+            {
+                
+            }*/
             push_b(ps);
-            ft_putstr_fd("pb\n", 0);
+            ft_putstr_fd("pb\n", 1);
+            ps->x++;
         }
         else
         {
-            ft_putstr_fd("ra\n", 0);
+            ft_putstr_fd("ra\n", 1);
             ps->a = ps->a->next;
+            ps->x++;
         }
         i++;
     }
@@ -72,20 +80,24 @@ void    order_b(t_push_swap *ps)
     {
         while (ps->b->data != min)
         {
-            ft_putstr_fd("rb\n", 0);
+            ft_putstr_fd("rb\n", 1);
             ps->b = ps->b->next;
+            ps->x++;
         }
     }
     else
     {
         while (ps->b->data != min)
         {
-            ft_putstr_fd("rrb\n", 0);
+            ft_putstr_fd("rrb\n", 1);
             ps->b = ps->b->prev;
+            ps->x++;
         }
     }
     push_a(ps);
-    ft_putstr_fd("pa\n", 0);
+    ft_putstr_fd("pa\n", 1);
+    ps->x++;
     ps->a = ps->a->next;
-    ft_putstr_fd("ra\n", 0);
+    ft_putstr_fd("ra\n", 1);
+    ps->x++;
 }
