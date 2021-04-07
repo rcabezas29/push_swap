@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:09:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 16:35:05 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/06 10:42:17 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	five_sort(t_push_swap *ps)
 	n = ps->n - 3;
 	while (n-- > 0)
 	{
-		ft_putstr_fd("pb\n", 0);
+		ft_putstr_fd("pb\n", 1);
 		push_b(ps);
 	}
 	three_sort(ps);

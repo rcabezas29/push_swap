@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:36:41 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 16:24:34 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/07 15:58:04 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,22 @@ int	main(int argc, char **argv)
 {
 	t_push_swap	*ps;
 
+	if (argc <= 1)
+	{
+		printf("Error\n");
+		return (0);
+	}
+	if (argc == 2)
+	{
+		argv = ft_split(argv[1], ' ');
+		argc = ft_strlen(argv);
+	}
 	check_args(argv);
 	ps = malloc(sizeof(t_push_swap));
 	ft_bzero(ps, sizeof(t_push_swap));
 	ps->n = argc - 1;
-	if (argc <= 1)
-	{
-		printf("ERROR\nIncorrect number of arguments");
-		return (0);
-	}
 	init_stack_a(ps, argv);
-	//print_stack_a(ps);
+	print_stack_a(ps);
 	while (get_next_line(0, &ps->line) > 0)
 	{
 		if (!ft_strcmp(ps->line, ""))

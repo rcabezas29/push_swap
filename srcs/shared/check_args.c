@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:58:53 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 16:50:43 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/07 15:45:27 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void	check_args(char **args)
 		while (args[i][j])
 		{
 			if (!ft_isdigit(args[i][j]) && args[i][j] != '-')
+			{
+				printf("Error\n");
+				exit (EXIT_SUCCESS);
+			}
+			if (ft_strlen(args[i]) > 9)
 			{
 				printf("Error\n");
 				exit (EXIT_SUCCESS);
