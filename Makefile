@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/04/07 09:12:22 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/04/08 11:03:36 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ OBJS_CH = $(CH_SRCS:.c=.o)
 OBJS_PS = $(PS_SRCS:.c=.o)
 
 SRCS_SHARED = init_stacks.c ops.c print_stack.c check_args.c \
-			dcll_functions_1.c dcll_functions_2.c check_order.c
+			dcll_functions_1.c dcll_functions_2.c check_order.c \
+			trans_single_string.c
 
 SHARED_SRCS = $(addprefix srcs/shared/, $(SRCS_SHARED))
 

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/07 15:38:07 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/09 09:36:58 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,7 @@ int		minimum_inpush(t_push_swap *ps, int media);
 void	sort_hundred(t_push_swap *ps);
 void	order_b(t_push_swap *ps);
 int		check_order_hundred(t_push_swap *ps);
+
+char    **single_string(t_push_swap *ps, char **argv);
+int		count_bidimensional_array(char **s);
 #endif
