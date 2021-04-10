@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/09 09:36:58 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/10 14:09:25 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_push_swap
 	int			max;
 	int			min;
 	int			x;
+	int			is_string;
 }	t_push_swap;
 
 void	init_stack_a(t_push_swap *ps, char **argv);
@@ -78,4 +79,5 @@ int		check_order_hundred(t_push_swap *ps);
 
 char    **single_string(t_push_swap *ps, char **argv);
 int		count_bidimensional_array(char **s);
+char	**mem_double_ptr(char **s, int n);
 #endif

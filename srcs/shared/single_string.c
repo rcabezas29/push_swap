@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   trans_single_string.c                              :+:      :+:    :+:   */
+/*   single_string.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 09:08:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/09 09:52:43 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/10 14:09:44 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 char	**single_string(t_push_swap *ps, char **argv)
 {
-    char	**aux;
-	char	**ret;
+	int		n;
 	int		i;
 	int		j;
-	int		n;
+	char	**aux;
+	char	**split;
 
-	ps = NULL;
-    aux = ft_split(argv[1], ' ');
-	n = count_bidimensional_array(aux);
-	ret = malloc(sizeof(char *) * (n + 2));
-	ret[0] = argv[0];
-	i = 0;
-	j = 1;
-	while (aux[i])
+	aux = NULL;
+	n = count_bidimensional_array(argv);
+	if (n == 1)
+		return (argv);
+	split = ft_split(argv[1], ' ');
+	ps->is_string = 1;
+	aux = mem_double_ptr(aux, n);
+	aux[0] = argv[0];
+	i = 1;
+	j = 0;
+	while (split[j])
 	{
-		ret[j] = aux[i];
-		i++;
+		aux[i] = split[j];
 		j++;
+		i++;
 	}
-    return (ret);
+	return (aux);
 }
 
 int		count_bidimensional_array(char **s)
@@ -46,4 +49,18 @@ int		count_bidimensional_array(char **s)
 	while (s[i++])
 		n++;
 	return (n);
+}
+
+char	**mem_double_ptr(char **s, int n)
+{
+	int i;
+
+	s = (char **)malloc(sizeof(char **));
+	i = 0;
+	while (i <= n)
+	{
+		s[i] = (char *)malloc(sizeof(char));
+		i++;
+	}
+	return (s);
 }

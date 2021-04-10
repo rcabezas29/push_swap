@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/04/08 11:03:36 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/04/10 12:54:16 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ PUSH_SWAP = push_swap
 
 CC		= gcc
 CFLAGS = -Werror -Wextra -Wall -g3 -fsanitize=address
-
 SRCS_CH = checker.c read_line.c
 
 SRCS_PS = three_nums.c push_swap.c media.c five_nums.c \
@@ -32,7 +31,7 @@ OBJS_PS = $(PS_SRCS:.c=.o)
 
 SRCS_SHARED = init_stacks.c ops.c print_stack.c check_args.c \
 			dcll_functions_1.c dcll_functions_2.c check_order.c \
-			trans_single_string.c
+			single_string.c
 
 SHARED_SRCS = $(addprefix srcs/shared/, $(SRCS_SHARED))
 
