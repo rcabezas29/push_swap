@@ -55,7 +55,7 @@ char	**mem_double_ptr(char **s, int n)
 {
 	int i;
 
-	s = (char **)malloc(sizeof(char **));
+	s = (char **)malloc(sizeof(char *) * n);
 	i = 0;
 	while (i <= n)
 	{
