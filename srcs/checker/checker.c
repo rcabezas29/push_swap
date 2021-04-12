@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:36:41 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/09 11:35:48 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/12 17:49:36 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,15 @@ int	main(int argc, char **argv)
 		printf("Error\n");
 		return (0);
 	}
-	i = 1;
+	i = 0;
 	if (argc == 2)
-		argv = single_string(ps, argv);
-	check_args(argv);
-	init_stack_a(ps, argv);
+		ps->argstr = single_string(ps, argv);
+	else
+		ps->argstr = argv;
+	/*while(ps->argstr[i++])
+		printf("%s\n",ps->argstr[i]);*/
+	check_args(ps->argstr);
+	init_stack_a(ps, ps->argstr);
 	print_stack_a(ps);
 	while (get_next_line(0, &ps->line) > 0)
 	{

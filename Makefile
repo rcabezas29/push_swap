@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/04/10 12:54:16 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/04/12 17:28:49 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CHECKER = checker
 PUSH_SWAP = push_swap
 
 CC		= gcc
-CFLAGS = -Werror -Wextra -Wall -g3 -fsanitize=address
+CFLAGS = -Werror -Wextra -Wall -g3
 SRCS_CH = checker.c read_line.c
 
 SRCS_PS = three_nums.c push_swap.c media.c five_nums.c \
