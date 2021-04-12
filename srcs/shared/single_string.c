@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 09:08:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/12 17:53:53 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/12 18:35:08 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	**single_string(t_push_swap *ps, char **argv)
 	aux = NULL;
 	split = ft_split(argv[1], ' ');
 	n = count_bidimensional_array(split);
+	ps->n = n;
 	if (n == 1)
 		return (argv);
 	ps->is_string = 1;

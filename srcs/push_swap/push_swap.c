@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/07 15:51:00 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/12 18:47:14 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,20 @@ int	main(int argc, char **argv)
 {
 	t_push_swap	*ps;
 
+	ps = malloc(sizeof(t_push_swap));
+	ft_bzero(ps, sizeof(t_push_swap));
+	ps->n = argc - 1;
 	if (argc <= 1)
 	{
 		printf("Error\n");
 		return (0);
 	}
-	check_args(argv);
-	ps = malloc(sizeof(t_push_swap));
-	ft_bzero(ps, sizeof(t_push_swap));
-	ps->n = argc - 1;
-	init_stack_a(ps, argv);
+	if (argc == 2)
+		ps->argstr = single_string(ps, argv);
+	else
+		ps->argstr = argv;
+	check_args(ps->argstr);
+	init_stack_a(ps, ps->argstr);
 	ps->max = check_maximum(ps->a);
 	ps->min = check_minimum(ps->a);
 	if (ps->n <= 3)
