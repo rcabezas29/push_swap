@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/12 21:19:08 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/14 08:44:02 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	order_b(t_push_swap *ps);
 int		check_order_hundred(t_push_swap *ps);
 
 void	sort_a_lot(t_push_swap *ps);
+void	push_b_to_order(t_push_swap *ps, int low, int high);
 
 char    **single_string(t_push_swap *ps, char **argv);
 int		count_bidimensional_array(char **s);
