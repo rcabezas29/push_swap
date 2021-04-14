@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 09:08:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/12 18:35:08 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/14 11:30:19 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**single_string(t_push_swap *ps, char **argv)
 	return (aux);
 }
 
-int		count_bidimensional_array(char **s)
+int	count_bidimensional_array(char **s)
 {
 	int	n;
 
@@ -53,8 +53,8 @@ int		count_bidimensional_array(char **s)
 
 char	**mem_double_ptr(int n)
 {
-	int i;
-	char **s;
+	int		i;
+	char	**s;
 
 	s = ft_calloc(sizeof(char *), (n + 1));
 	i = 0;

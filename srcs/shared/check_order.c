@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:46:30 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/06 11:16:59 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/14 11:45:41 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ int	check_order(t_push_swap *ps)
 		i++;
 	}
 	printf("OK!");
-	//print_stack_a(ps);
 	exit(EXIT_SUCCESS);
 }

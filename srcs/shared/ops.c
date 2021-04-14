@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:16 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 17:01:03 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/14 15:05:13 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	push_b(t_push_swap *ps)
 {
 	t_stack	*tmp;
 
+	tmp = NULL;
 	if (!ps->a)
 		return ;
 	if (!ps->b)
@@ -42,20 +43,24 @@ void	push_b(t_push_swap *ps)
 		free(ps->a);
 	}
 	else
-	{
-		tmp = ps->a->prev;
-		tmp->next = ps->a->next;
-		ps->a->next->prev = tmp;
-		free(ps->a);
-		ps->a = NULL;
-		ps->a = tmp->next;
-	}
+		help_push_b(ps, tmp);
+}
+
+void	help_push_b(t_push_swap *ps, t_stack *tmp)
+{
+	tmp = ps->a->prev;
+	tmp->next = ps->a->next;
+	ps->a->next->prev = tmp;
+	free(ps->a);
+	ps->a = NULL;
+	ps->a = tmp->next;
 }
 
 void	push_a(t_push_swap *ps)
 {
 	t_stack	*tmp;
 
+	tmp = NULL;
 	if (!ps->b)
 		return ;
 	if (!ps->a)
@@ -73,12 +78,15 @@ void	push_a(t_push_swap *ps)
 		free(ps->b);
 	}
 	else
-	{
-		tmp = ps->b->prev;
-		tmp->next = ps->b->next;
-		ps->b->next->prev = tmp;
-		free(ps->b);
-		ps->b = NULL;
-		ps->b = tmp->next;
-	}
+		help_push_a(ps, tmp);
+}
+
+void	help_push_a(t_push_swap *ps, t_stack *tmp)
+{
+	tmp = ps->b->prev;
+	tmp->next = ps->b->next;
+	ps->b->next->prev = tmp;
+	free(ps->b);
+	ps->b = NULL;
+	ps->b = tmp->next;
 }

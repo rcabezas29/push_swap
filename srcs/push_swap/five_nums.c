@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:09:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/06 10:42:17 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:08:58 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,13 @@ void	insertion(t_push_swap *ps)
 {
 	while (!check_order_five(ps))
 	{
-		push_a(ps);
-		ft_putstr_fd("pa\n", 1);
-		if (ps->a->data > ps->a->prev->data)
+		if (ps->b && ps->a->data > ps->b->data)
 		{
-			ps->a = ps->a->next;
-			ft_putstr_fd("ra\n", 1);
+			push_a(ps);
+			ft_putstr_fd("pa\n", 0);
 		}
-		else if (ps->a->data > ps->a->next->data
-			&& ps->a->data < ps->a->prev->data)
+		else
 		{
-			while (ps->a->data < ps->a->prev->data)
-			{
-				ft_putstr_fd("rra\n", 1);
-				ps->a = ps->a->prev;
-				ft_putstr_fd("sa\n", 1);
-				swap(ps->a);
-				ps->a = ps->a->prev;
-			}
-			ft_putstr_fd("ra\n", 1);
-			ps->a = ps->a->next;
 			ft_putstr_fd("ra\n", 1);
 			ps->a = ps->a->next;
 		}

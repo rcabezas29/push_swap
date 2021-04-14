@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:36:41 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/12 21:03:25 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/14 11:19:40 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,17 @@ int	main(int argc, char **argv)
 		ps->argstr = argv;
 	check_args(ps->argstr);
 	init_stack_a(ps, ps->argstr);
-	//print_stack_a(ps);
+	read_instructions(ps);
+	check_order(ps);
+	return (0);
+}
+
+void	read_instructions(t_push_swap *ps)
+{
 	while (get_next_line(0, &ps->line) > 0)
 	{
 		if (!ft_strcmp(ps->line, ""))
 			break ;
 		read_line(ps);
 	}
-	check_order(ps);
-	return (0);
 }
