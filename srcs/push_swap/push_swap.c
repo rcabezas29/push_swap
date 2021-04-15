@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/13 16:26:33 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 12:29:29 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ int	main(int argc, char **argv)
 		three_sort(ps);
 	else if (3 < ps->n && ps->n <= 5)
 		five_sort(ps);
-	else if (5 < ps->n && ps->n <= 100)
-		sort_hundred(ps);
-	else
+	else if (5 < ps->n)
 		sort_a_lot(ps);
 	//print_stack_a(ps);
 	//printf("Lineas: %i\n", ps->x);

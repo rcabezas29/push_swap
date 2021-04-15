@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/14 08:36:32 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 12:27:15 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,73 +23,10 @@ void	sort_hundred(t_push_swap *ps)
 		return ;
 	med_low = (get_media(ps) + ps->min) / 2;
 	med_high = (get_media(ps) + ps->max) / 2;
-	while (i <= ps->n - 1)
-	{
-		if (ps->a->data <= med_low)
-		{
-			push_b(ps);
-			ft_putstr_fd("pb\n", 1);
-		}
-		else
-		{
-			ft_putstr_fd("ra\n", 1);
-			ps->a = ps->a->next;
-		}
-		i++;
-	}
-	while (ps->b)
-		order_b(ps);
-	i = 0;
-	while (i <= ps->n - 1)
-	{
-		if (ps->a->data > med_low && ps->a->data <= get_media(ps))
-		{
-			push_b(ps);
-			ft_putstr_fd("pb\n", 1);
-		}
-		else
-		{
-			ft_putstr_fd("ra\n", 1);
-			ps->a = ps->a->next;
-		}
-		i++;
-	}
-	while (ps->b)
-		order_b(ps);
-	i = 0;
-	while (i <= ps->n - 1)
-	{
-		if (ps->a->data <= med_high && ps->a->data > get_media(ps))
-		{
-			push_b(ps);
-			ft_putstr_fd("pb\n", 1);
-		}
-		else
-		{
-			ft_putstr_fd("ra\n", 1);
-			ps->a = ps->a->next;
-		}
-		i++;
-	}
-	while (ps->b)
-		order_b(ps);
-	i = 0;
-	while (i <= ps->n - 1)
-	{
-		if (ps->a->data > med_high)
-		{
-			push_b(ps);
-			ft_putstr_fd("pb\n", 1);
-		}
-		else
-		{
-			ft_putstr_fd("ra\n", 1);
-			ps->a = ps->a->next;
-		}
-		i++;
-	}
-	while (ps->b)
-		order_b(ps);
+	push_b_to_order(ps, ps->min, ps->med_low);
+	push_b_to_order(ps, ps->med_low, get_media(ps));
+	push_b_to_order(ps, get_media(ps), ps->med_high);
+	push_b_to_order(ps, ps->med_high, ps->max);
 }
 
 void	order_b(t_push_swap *ps)

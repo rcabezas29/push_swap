@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/14 17:20:03 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 12:01:52 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	five_sort(t_push_swap *ps);
 int		check_order_five(t_push_swap *ps);
 void	insertion(t_push_swap *ps);
 void	continue_five(t_push_swap *ps);
+void	find_place_five(t_push_swap *ps);
 
 int		get_media(t_push_swap *ps);
 

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:09:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 11:45:53 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 12:08:49 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	insertion(t_push_swap *ps)
 		if (ps->b)
 		{
 			push_a(ps);
-        	ft_putstr_fd("pa\n", 1);
+			ft_putstr_fd("pa\n", 1);
 		}
 		if (ps->a->data == ps->max || ps->a->data > ps->a->prev->data)
 		{
@@ -65,14 +65,18 @@ void	insertion(t_push_swap *ps)
 			continue ;
 		else
 		{
-			while (!(ps->a->data < ps->a->next->data && ps->a->data > ps->a->prev->data))
-			{
-				swap(ps->a);
-				ps->a = ps->a->prev;
-				ft_putstr_fd("sa\n", 1);
-				ft_putstr_fd("ra\n", 1);
-				ps->a = ps->a->next;
-			}
+			while (!(ps->a->data < ps->a->next->data
+					&& ps->a->data > ps->a->prev->data))
+				find_place_five(ps);
 		}
 	}
+}
+
+void	find_place_five(t_push_swap *ps)
+{
+	swap(ps->a);
+	ps->a = ps->a->prev;
+	ft_putstr_fd("sa\n", 1);
+	ft_putstr_fd("ra\n", 1);
+	ps->a = ps->a->next;
 }
