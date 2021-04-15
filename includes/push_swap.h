@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 12:01:52 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 15:41:55 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_push_swap
 	char		*line;
 	int			max;
 	int			min;
-	int			x;
 	int			is_string;
 	char		**argstr;
 	int			med_min_low;
@@ -52,7 +51,6 @@ void	push_a(t_push_swap *ps);
 void	push_b(t_push_swap *ps);
 void	help_push_b(t_push_swap *ps, t_stack *tmp);
 void	help_push_a(t_push_swap *ps, t_stack *tmp);
-
 
 void	print_stack_a(t_push_swap *ps);
 void	print_stack_b(t_push_swap *ps);
@@ -89,14 +87,12 @@ int		check_maximum(t_stack *s);
 int		check_minimum(t_stack *s);
 int		minimum_inpush(t_push_swap *ps, int media);
 
-void	sort_hundred(t_push_swap *ps);
 void	order_b(t_push_swap *ps);
-int		check_order_hundred(t_push_swap *ps);
-
 void	sort_a_lot(t_push_swap *ps);
 void	push_b_to_order(t_push_swap *ps, int low, int high);
+void	go_to_min(t_push_swap  *ps, int pos, int n);
 
-char    **single_string(t_push_swap *ps, char **argv);
+char	**single_string(t_push_swap *ps, char **argv);
 int		count_bidimensional_array(char **s);
 char	**mem_double_ptr(int n);
 #endif

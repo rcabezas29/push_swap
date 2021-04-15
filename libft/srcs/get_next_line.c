@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 19:10:45 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 15:46:44 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 15:23:25 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ int	get_next_line(int fd, char **line)
 	int			ret;
 	char		*buff;
 
-	buff = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+	buff = (char *)ft_calloc(sizeof(char), BUFFER_SIZE + 1);
 	if (fd < 0 || line == NULL || BUFFER_SIZE < 1 || !buff)
 		return (-1);
-	while ((ret = read(fd, buff, BUFFER_SIZE)) > 0)
+	ret = read(fd, buff, BUFFER_SIZE);
+	while (ret > 0)
 	{
-		buff[ret] = '\0';
 		if (a[fd] == NULL)
 			a[fd] = ft_strdup(buff);
 		else
@@ -79,6 +79,7 @@ int	get_next_line(int fd, char **line)
 		}
 		if (ft_strchr(a[fd], '\n'))
 			break ;
+		ret = read(fd, buff, BUFFER_SIZE);
 	}
 	free(buff);
 	return (output(a, line, ret, fd));

@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/04/13 15:46:36 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/04/15 12:30:51 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Werror -Wextra -Wall -g3
 SRCS_CH = checker.c read_line.c
 
 SRCS_PS = three_nums.c push_swap.c media.c five_nums.c \
-			check_max_min.c hundred_nums.c a_lot_num.c
+			check_max_min.c a_lot_num.c
 
 CH_SRCS = $(addprefix srcs/checker/, $(SRCS_CH))
 
