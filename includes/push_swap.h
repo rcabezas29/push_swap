@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 15:41:55 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:56:34 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ typedef struct s_push_swap
 	int			med_high_max;
 }	t_push_swap;
 
+t_stack	*ft_create_node(int n);
 void	init_stack_a(t_push_swap *ps, char **argv);
+
 void	read_instructions(t_push_swap *ps);
 
 void	read_line(t_push_swap *ps);
@@ -56,6 +58,7 @@ void	print_stack_a(t_push_swap *ps);
 void	print_stack_b(t_push_swap *ps);
 
 int		check_order(t_push_swap *ps);
+int		checking_order(t_push_swap *ps);
 
 void	check_args(char **args);
 void	check_int(char **args, int i, int j);
@@ -64,19 +67,13 @@ void	check_repeat(char *s1, char *s2);
 t_stack	*ft_dcllnew(int n);
 void	ft_dcll_addfront(t_stack *s, t_stack *new);
 int		ft_dcll_size(t_stack *s);
-t_stack	*ft_dcll_last(t_stack *s);
 void	ft_dcll_addback(t_stack *s, t_stack *new);
-void	ft_dcll_delback(t_stack *s);
-void	ft_dcll_delfirst(t_stack *s);
-void	ft_dcll_clear(t_stack *s);
-t_stack	*ft_create_node(int n);
 void	ft_dcll_delone(t_stack *node);
 
 void	three_sort(t_push_swap *ps);
-int		check_order_three(t_push_swap *ps);
+void	ordering(t_push_swap *ps);
 
 void	five_sort(t_push_swap *ps);
-int		check_order_five(t_push_swap *ps);
 void	insertion(t_push_swap *ps);
 void	continue_five(t_push_swap *ps);
 void	find_place_five(t_push_swap *ps);
@@ -95,4 +92,5 @@ void	go_to_min(t_push_swap  *ps, int pos, int n);
 char	**single_string(t_push_swap *ps, char **argv);
 int		count_bidimensional_array(char **s);
 char	**mem_double_ptr(int n);
+void	free_double_ptr(char **s);
 #endif

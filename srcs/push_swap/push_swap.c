@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 12:30:31 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 21:13:09 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,8 @@ int	main(int argc, char **argv)
 		five_sort(ps);
 	else if (5 < ps->n)
 		sort_a_lot(ps);
+	/*if (ps->is_string)
+		free_double_ptr(ps->argstr);*/
+	//system("leaks push_swap");
 	return (0);
 }

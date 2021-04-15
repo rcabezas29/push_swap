@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 09:08:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/14 11:30:19 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 20:27:00 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,17 @@ char	**single_string(t_push_swap *ps, char **argv)
 	if (n == 1)
 		return (argv);
 	ps->is_string = 1;
-	aux = mem_double_ptr(n);
-	aux[0] = argv[0];
+	aux = malloc(sizeof(char *) * (n + 1));
+	aux[0] = ft_strdup(argv[0]);
 	i = 1;
 	j = 0;
 	while (split[j])
 	{
-		aux[i] = split[j];
+		aux[i] = ft_strdup(split[j]);
 		j++;
 		i++;
 	}
+	free_double_ptr(split);
 	aux[i] = NULL;
 	return (aux);
 }
@@ -64,4 +65,17 @@ char	**mem_double_ptr(int n)
 		i++;
 	}
 	return (s);
+}
+
+void	free_double_ptr(char **s)
+{
+	int	i;
+	
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
 }

@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 09:51:03 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/05 16:55:25 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:38:03 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,6 @@ int	ft_dcll_size(t_stack *s)
 	return (i);
 }
 
-t_stack	*ft_dcll_last(t_stack *s)
-{
-	return ((t_stack *)s->prev);
-}
-
 void	ft_dcll_addback(t_stack *s, t_stack *new)
 {
 	t_stack	*last;
@@ -63,4 +58,17 @@ void	ft_dcll_addback(t_stack *s, t_stack *new)
 	last->next = new;
 	s->prev = new;
 	new->next = s;
+}
+
+void	ft_dcll_delone(t_stack *s)
+{
+	t_stack	*behind;
+	t_stack	*infront;
+
+	behind = s->prev;
+	infront = s->next;
+	free(s);
+	s = NULL;
+	behind->next = infront;
+	infront->prev = behind;
 }

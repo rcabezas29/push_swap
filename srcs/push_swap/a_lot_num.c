@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 21:20:21 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 15:42:45 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:22:00 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_a_lot(t_push_swap *ps)
 {
-	if (check_order_five(ps))
+	if (checking_order(ps))
 		return ;
 	ps->med_low = (get_media(ps) + ps->min) / 2;
 	ps->med_high = (get_media(ps) + ps->max) / 2;

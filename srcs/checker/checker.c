@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:36:41 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/14 11:19:40 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/15 20:15:21 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void	read_instructions(t_push_swap *ps)
 		if (!ft_strcmp(ps->line, ""))
 			break ;
 		read_line(ps);
+		free(ps->line);
 	}
 }
