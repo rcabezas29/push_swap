@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 17:56:34 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/16 09:31:20 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	print_stack_b(t_push_swap *ps);
 
 int		check_order(t_push_swap *ps);
 int		checking_order(t_push_swap *ps);
+int		checking_order_three(t_push_swap *ps);
 
 void	check_args(char **args);
 void	check_int(char **args, int i, int j);

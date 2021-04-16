@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:59:16 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 21:11:23 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/16 09:38:04 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ void	push_a(t_push_swap *ps)
 		return ;
 	else if (ps->b == ps->b->next)
 	{
-		//ps->b = NULL;
-		//free(ps->b);
+		ps->b = NULL;
+		free(ps->b);
 	}
 	else
 		help_push_a(ps, tmp);

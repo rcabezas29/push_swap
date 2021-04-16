@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:09:09 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 21:49:04 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/16 09:23:46 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,25 @@
 
 void	five_sort(t_push_swap *ps)
 {
+	int	i;
+
+	i = 2;
 	if (checking_order(ps))
 		return ;
-	while (ps->a->data != ps->min)
+	while (ps->n == 5 && i != 0)
 	{
-		ft_putstr_fd("ra\n", 1);
-		ps->a = ps->a->next;
+		while (ps->a->data != ps->min && ps->a->data != ps->max)
+		{
+			ft_putstr_fd("ra\n", 1);
+			ps->a = ps->a->next;
+		}
+		ft_putstr_fd("pb\n", 1);
+		push_b(ps);
+		i--;
 	}
-	ft_putstr_fd("pb\n", 1);
-	push_b(ps);
-	if (ps->n == 5)
+	if (ps->n == 4)
 	{
-		while (ps->a->data != ps->max)
+		while (ps->a->data != ps->min)
 		{
 			ft_putstr_fd("ra\n", 1);
 			ps->a = ps->a->next;
@@ -41,6 +48,12 @@ void	insertion(t_push_swap *ps)
 {
 	if (ps->n == 5)
 	{
+		if (ps->b->data < ps->b->next->data)
+		{
+			swap(ps->b);
+			ps->b = ps->b->prev;
+			ft_putstr_fd("sb\n", 1);
+		}
 		ft_putstr_fd("pa\n", 1);
 		push_a(ps);
 		ft_putstr_fd("ra\n", 1);
