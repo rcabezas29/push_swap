@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/16 09:31:20 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/16 15:21:58 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,7 @@ void	ordering(t_push_swap *ps);
 
 void	five_sort(t_push_swap *ps);
 void	insertion(t_push_swap *ps);
-void	continue_five(t_push_swap *ps);
-void	find_place_five(t_push_swap *ps);
+void	find_num_in_five(t_push_swap *ps);
 
 int		get_media(t_push_swap *ps);
 
@@ -88,10 +87,9 @@ int		minimum_inpush(t_push_swap *ps, int media);
 void	order_b(t_push_swap *ps);
 void	sort_a_lot(t_push_swap *ps);
 void	push_b_to_order(t_push_swap *ps, int low, int high);
-void	go_to_min(t_push_swap  *ps, int pos, int n);
+void	go_to_min(t_push_swap *ps, int pos, int n);
 
 char	**single_string(t_push_swap *ps, char **argv);
 int		count_bidimensional_array(char **s);
-char	**mem_double_ptr(int n);
 void	free_double_ptr(char **s);
 #endif

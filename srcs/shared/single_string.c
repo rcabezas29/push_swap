@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 09:08:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 20:27:00 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/16 21:23:08 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	**single_string(t_push_swap *ps, char **argv)
 {
-	int		n;
 	int		i;
 	int		j;
 	char	**aux;
@@ -22,12 +21,11 @@ char	**single_string(t_push_swap *ps, char **argv)
 
 	aux = NULL;
 	split = ft_split(argv[1], ' ');
-	n = count_bidimensional_array(split);
-	ps->n = n;
-	if (n == 1)
+	ps->n = count_bidimensional_array(split);
+	if (ps->n == 1)
 		return (argv);
 	ps->is_string = 1;
-	aux = malloc(sizeof(char *) * (n + 1));
+	aux = ft_calloc(sizeof(char *), (ps->n + 2));
 	aux[0] = ft_strdup(argv[0]);
 	i = 1;
 	j = 0;
@@ -52,27 +50,12 @@ int	count_bidimensional_array(char **s)
 	return (n);
 }
 
-char	**mem_double_ptr(int n)
-{
-	int		i;
-	char	**s;
-
-	s = ft_calloc(sizeof(char *), (n + 1));
-	i = 0;
-	while (i <= n)
-	{
-		s[i] = malloc(sizeof(char));
-		i++;
-	}
-	return (s);
-}
-
 void	free_double_ptr(char **s)
 {
 	int	i;
-	
+
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		free(s[i]);
 		i++;
