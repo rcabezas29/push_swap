@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 09:08:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/16 21:23:08 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/19 11:16:58 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ char	**single_string(t_push_swap *ps, char **argv)
 	split = ft_split(argv[1], ' ');
 	ps->n = count_bidimensional_array(split);
 	if (ps->n == 1)
+	{
+		free_double_ptr(split);
 		return (argv);
-	ps->is_string = 1;
-	aux = ft_calloc(sizeof(char *), (ps->n + 2));
-	aux[0] = ft_strdup(argv[0]);
+	}
+	aux = init_aux(ps, aux, argv[0]);
 	i = 1;
 	j = 0;
 	while (split[j])
@@ -61,4 +62,12 @@ void	free_double_ptr(char **s)
 		i++;
 	}
 	free(s);
+}
+
+char	**init_aux(t_push_swap *ps, char **aux, char *prog)
+{
+	ps->is_string = 1;
+	aux = ft_calloc(sizeof(char *), (ps->n + 2));
+	aux[0] = ft_strdup(prog);
+	return (aux);
 }

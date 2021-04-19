@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/16 15:21:58 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/19 11:17:13 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,5 @@ void	go_to_min(t_push_swap *ps, int pos, int n);
 char	**single_string(t_push_swap *ps, char **argv);
 int		count_bidimensional_array(char **s);
 void	free_double_ptr(char **s);
+char	**init_aux(t_push_swap *ps, char **aux, char *prog);
 #endif
