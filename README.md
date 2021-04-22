@@ -56,6 +56,8 @@ I followed [this article](https://medium.com/@jamierobertdawson/push-swap-the-le
 
 Lastly, to order big stacks, I divide the stack in 8 parts, pass from smaller to bigger the numbers to B. And the passing them ordered to A. So, I used a mix of [QUICKSORT](https://en.wikipedia.org/wiki/Quicksort) and [INSERTION SORT](https://en.wikipedia.org/wiki/Insertion_sort) methods.
 
+[!Alt Text](Screen Recording 2021-04-22 at 4.18.02 PM.gif)
+
 ## USE
 
 #### Compile
