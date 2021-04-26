@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 21:20:21 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/23 08:48:09 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:44:34 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,17 @@ void	push_b_to_order(t_push_swap *ps, int low, int high)
 		}
 		else
 		{
-			ft_putstr_fd("ra\n", 1);
-			ps->a = ps->a->next;
+			if (ps->b && ps->b->data != check_minimum(ps->b))
+			{
+				ft_putstr_fd("rr\n", 1);
+				ps->a = ps->a->next;
+				ps->b = ps->b->next;
+			}
+			else
+			{
+				ft_putstr_fd("ra\n", 1);
+				ps->a = ps->a->next;
+			}
 		}
 		i++;
 	}
