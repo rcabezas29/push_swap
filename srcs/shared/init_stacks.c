@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:00:13 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/16 12:06:42 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/26 15:17:10 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	init_stack_a(t_push_swap *ps, char **argv)
 			ft_dcll_addback(ps->a, ft_create_node(ft_atoi(argv[i])));
 		i++;
 	}
+	ps->max = check_maximum(ps->a);
+	ps->min = check_minimum(ps->a);
 }
 
 t_stack	*ft_create_node(int n)

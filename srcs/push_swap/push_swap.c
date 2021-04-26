@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/23 08:43:39 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/26 15:17:02 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	main(int argc, char **argv)
 		ps->argstr = single_string(ps, argv);
 	check_args(ps->argstr);
 	init_stack_a(ps, ps->argstr);
-	ps->max = check_maximum(ps->a);
-	ps->min = check_minimum(ps->a);
 	if (ps->n <= 3)
 		three_sort(ps);
 	else if (3 < ps->n && ps->n <= 5)

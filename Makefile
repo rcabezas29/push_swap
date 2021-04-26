@@ -6,7 +6,7 @@
 #    By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 09:46:52 by rcabezas          #+#    #+#              #
-#    Updated: 2021/04/23 08:37:00 by rcabezas         ###   ########.fr        #
+#    Updated: 2021/04/26 15:18:00 by rcabezas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS = -Werror -Wextra -Wall
 SRCS_CH = checker.c read_line.c
 
 SRCS_PS = three_nums.c push_swap.c media.c five_nums.c \
-			check_max_min.c a_lot_num.c hundred_num.c
+			a_lot_num.c hundred_num.c
 
 CH_SRCS = $(addprefix srcs/checker/, $(SRCS_CH))
 
@@ -32,7 +32,7 @@ OBJS_PS = $(PS_SRCS:.c=.o)
 
 SRCS_SHARED = init_stacks.c ops.c print_stack.c check_args.c \
 			dcll_functions.c check_order.c \
-			single_string.c
+			single_string.c check_max_min.c
 
 SHARED_SRCS = $(addprefix srcs/shared/, $(SRCS_SHARED))
 

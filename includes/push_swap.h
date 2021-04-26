@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/23 08:47:22 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:54:01 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	order_b(t_push_swap *ps);
 void	sort_a_lot(t_push_swap *ps);
 void	push_b_to_order(t_push_swap *ps, int low, int high);
 void	go_to_min(t_push_swap *ps, int pos, int n);
+void	optimizing_rot(t_push_swap *ps);
 
 void	sort_hundred(t_push_swap *ps);
 

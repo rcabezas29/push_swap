@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 21:20:21 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/26 14:44:34 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/26 15:14:57 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,7 @@ void	push_b_to_order(t_push_swap *ps, int low, int high)
 			ft_putstr_fd("pb\n", 1);
 		}
 		else
-		{
-			if (ps->b && ps->b->data != check_minimum(ps->b))
-			{
-				ft_putstr_fd("rr\n", 1);
-				ps->a = ps->a->next;
-				ps->b = ps->b->next;
-			}
-			else
-			{
-				ft_putstr_fd("ra\n", 1);
-				ps->a = ps->a->next;
-			}
-		}
+			optimizing_rot(ps);
 		i++;
 	}
 	while (ps->b)
@@ -82,10 +70,9 @@ void	order_b(t_push_swap *ps)
 	}
 	while (ps->b->data != min)
 		go_to_min(ps, pos, n);
-	push_a(ps);
 	ft_putstr_fd("pa\n", 1);
-	ps->a = ps->a->next;
-	ft_putstr_fd("ra\n", 1);
+	push_a(ps);
+	optimizing_rot(ps);
 }
 
 void	go_to_min(t_push_swap *ps, int pos, int n)
@@ -99,5 +86,20 @@ void	go_to_min(t_push_swap *ps, int pos, int n)
 	{
 		ft_putstr_fd("rrb\n", 1);
 		ps->b = ps->b->prev;
+	}
+}
+
+void	optimizing_rot(t_push_swap *ps)
+{
+	if (ps->b && ps->b->data != check_minimum(ps->b))
+	{
+		ft_putstr_fd("rr\n", 1);
+		ps->a = ps->a->next;
+		ps->b = ps->b->next;
+	}
+	else
+	{
+		ft_putstr_fd("ra\n", 1);
+		ps->a = ps->a->next;
 	}
 }
