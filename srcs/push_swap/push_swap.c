@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/26 15:17:02 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/04/27 09:26:39 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	main(int argc, char **argv)
 		three_sort(ps);
 	else if (3 < ps->n && ps->n <= 5)
 		five_sort(ps);
-	else if (ps->n > 5 && ps->n < 101)
+	else if (ps->n > 5 && ps->n < 151)
 		sort_hundred(ps);
-	else if (ps->n > 100)
+	else if (ps->n > 150)
 		sort_a_lot(ps);
 	if (ps->is_string == 1)
 		free_double_ptr(ps->argstr);
