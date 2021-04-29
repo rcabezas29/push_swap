@@ -39,8 +39,8 @@ void	push_b(t_push_swap *ps)
 		return ;
 	else if (ps->a == ps->a->next)
 	{
-		ps->a = NULL;
 		free(ps->a);
+		ps->a = NULL;
 	}
 	else
 		help_push_b(ps, tmp);
