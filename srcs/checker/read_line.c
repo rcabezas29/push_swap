@@ -42,22 +42,38 @@ void	read_line(t_push_swap *ps)
 void	read_line_more(t_push_swap *ps)
 {
 	if (ft_strcmp(ps->line, "ra") == 0)
-		ps->a = ps->a->next;
+	{
+		if (ps->a)
+			ps->a = ps->a->next;
+	}
 	else if (ft_strcmp(ps->line, "rb") == 0)
-		ps->b = ps->b->next;
+	{
+		if (ps->b)
+			ps->b = ps->b->next;
+	}
 	else if (ft_strcmp(ps->line, "rr") == 0)
 	{
-		ps->a = ps->a->next;
-		ps->b = ps->b->next;
+		if (ps->a)
+			ps->a = ps->a->next;
+		if (ps->b)
+			ps->b = ps->b->next;
 	}
 	else if (ft_strcmp(ps->line, "rra") == 0)
-		ps->a = ps->a->prev;
+	{
+		if (ps->a)
+			ps->a = ps->a->prev;
+	}
 	else if (ft_strcmp(ps->line, "rrb") == 0)
-		ps->b = ps->b->prev;
+	{
+		if (ps->b)
+			ps->b = ps->b->prev;
+	}
 	else if (ft_strcmp(ps->line, "rrr") == 0)
 	{
-		ps->a = ps->a->prev;
-		ps->b = ps->b->prev;
+		if (ps->a)
+			ps->a = ps->a->prev;
+		if (ps->b)
+			ps->b = ps->b->prev;
 	}
 	else
 	{
