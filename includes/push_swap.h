@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:02:14 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/26 14:54:01 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/05/12 12:52:11 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	read_instructions(t_push_swap *ps);
 
 void	read_line(t_push_swap *ps);
 void	read_line_more(t_push_swap *ps);
+void	read_line_more_two(t_push_swap *ps);
 
 void	swap(t_stack *stack);
 void	push_a(t_push_swap *ps);

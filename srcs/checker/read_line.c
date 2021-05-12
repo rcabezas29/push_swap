@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 12:40:46 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/14 11:24:12 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/05/12 12:57:36 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,14 @@ void	read_line(t_push_swap *ps)
 
 void	read_line_more(t_push_swap *ps)
 {
-	if (ft_strcmp(ps->line, "ra") == 0)
+	if (ft_strcmp(ps->line, "rr") == 0)
+	{
+		if (ps->a)
+			ps->a = ps->a->next;
+		if (ps->b)
+			ps->b = ps->b->next;
+	}
+	else if (ft_strcmp(ps->line, "ra") == 0)
 	{
 		if (ps->a)
 			ps->a = ps->a->next;
@@ -51,19 +58,18 @@ void	read_line_more(t_push_swap *ps)
 		if (ps->b)
 			ps->b = ps->b->next;
 	}
-	else if (ft_strcmp(ps->line, "rr") == 0)
-	{
-		if (ps->a)
-			ps->a = ps->a->next;
-		if (ps->b)
-			ps->b = ps->b->next;
-	}
 	else if (ft_strcmp(ps->line, "rra") == 0)
 	{
 		if (ps->a)
 			ps->a = ps->a->prev;
 	}
-	else if (ft_strcmp(ps->line, "rrb") == 0)
+	else
+		read_line_more_two(ps);
+}
+
+void	read_line_more_two(t_push_swap *ps)
+{
+	if (ft_strcmp(ps->line, "rrb") == 0)
 	{
 		if (ps->b)
 			ps->b = ps->b->prev;
