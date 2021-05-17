@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:58:53 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/15 18:49:59 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/05/17 18:20:08 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	check_args(char **args)
 	int	k;
 
 	i = 1;
+	if (args[1] == NULL)
+		exit(EXIT_SUCCESS);
 	while (args[i])
 	{
 		j = 0;

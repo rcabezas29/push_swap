@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:37:02 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/27 09:26:39 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/05/17 18:21:04 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ int	main(int argc, char **argv)
 	ps = ft_calloc(13, sizeof(t_push_swap));
 	ps->n = argc - 1;
 	if (argc <= 1)
-	{
-		printf("Error\n");
 		return (0);
-	}
 	ps->argstr = argv;
 	if (argc == 2)
 		ps->argstr = single_string(ps, argv);
