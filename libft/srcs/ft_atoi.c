@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 18:04:35 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/03/11 12:11:07 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/05/17 18:55:50 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static int	ft_number(const char *str, int min, int max, int i)
 		j = 0;
 	else if (min == 1)
 		j = -j;
-	if (j == -469762049)
+	if (j <= -469762049)
 		return (-1);
-	if (j == 469762049)
+	if (j >= 469762049)
 		return (0);
 	return (j);
 }

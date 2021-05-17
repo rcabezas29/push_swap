@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:58:53 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/05/17 18:20:08 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/05/17 18:59:14 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	check_int(char **args, int i, int j)
 		printf("Error\n");
 		exit (EXIT_SUCCESS);
 	}
-	if (ft_strlen(args[i]) > 9)
+	if (ft_strlen(args[i]) > 9 && (ft_atoi(args[i]) == -1
+			|| ft_atoi(args[i]) == 0))
 	{
 		printf("Error\n");
 		exit (EXIT_SUCCESS);
