@@ -6,7 +6,7 @@
 /*   By: rcabezas <rcabezas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:28:38 by rcabezas          #+#    #+#             */
-/*   Updated: 2021/04/16 09:31:33 by rcabezas         ###   ########.fr       */
+/*   Updated: 2021/05/17 14:01:37 by rcabezas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	three_sort(t_push_swap *ps)
 {
-	if (!checking_order_three(ps))
+	if (!checking_order(ps))
 	{
 		if (ps->a->data > ps->a->next->data)
 			ordering(ps);
@@ -61,23 +61,4 @@ void	ordering(t_push_swap *ps)
 			ps->a = ps->a->next;
 		}
 	}
-}
-
-int	check_order_three(t_push_swap *ps)
-{
-	int		i;
-	t_stack	*ori;
-	t_stack	*fol;
-
-	i = 0;
-	ori = ps->a;
-	while (i < ps->n - 1)
-	{
-		fol = ori->next;
-		if (ori->data > fol->data)
-			return (0);
-		ori = ori->next;
-		i++;
-	}
-	return (1);
 }
